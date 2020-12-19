@@ -31,45 +31,38 @@
 }
 
 \begin{document}
-\title{課題3}
+\title{課題5}
 \author{ロボ団マスターコース}
 \maketitle
 
 \section{はじめに}
 実機を使って動かしてみよう！\\
-今回は、外付けの圧電ブザーを接続して鳴らしてみよう！\\
-画像の通りに接続をして、デジタルピンのポート０に１を出力することで音が鳴るよ！\\
+今回は、音について勉強しよう！\\
+まずは、下のコードを写経しよう。どんな動きをするか確認できたら、自分の曲を作ってみよう！\\
 \section{ソースコード}
+どんな音楽か聞いてみよう！
 \begin{lstlisting} 
 from microbit import *
-pin0.write_digital(1)
+import music
+notes = ['c4:1', 'e', 'g', 'c5', 'e5', 'g4', 'c5', 'e5', 'c4', 'e', 'g', 'c5', 'e5', 'g4', 'c5', 'e5']
+music.play(notes)
 \end{lstlisting}
+microbitにははじめから曲が用意されているよ！\\
+聞いてみよう！
+\begin{lstlisting} 
+import music
+music.play(music.FUNK)
+\end{lstlisting}
+FUNKを下の曲名に変えてみよう\\
+\> \textbf{BIRTHDAY}\\
+\> \textbf{DADADADUM}\\
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=4cm]{1.png}
-  \caption{microbit配線図}
-\end{figure}
-
-\subsection{問題1}
-圧電ブザーを3秒間鳴らして5秒間スリープをループするプログラムを作ってみよう！
-
-\subsection{問題2}
-1分タイマーを作って1秒ごとにブザーが鳴るプログラムを作ってみよう！
-
-\subsection{問題3}
-1分タイマーを作って2秒ごとにブザーがなるプログラムを作ってみよう！
-
-\subsection{問題4}
-分数を(1から60分)に変更できるタイマーを作って1秒ごとにブザーが鳴るプログラムを作ってみよう！
-
-\subsection{問題5}
-40から200BPMに変更できるメトロノームを作ってみよう！
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=2cm]{2.png}
-  \caption{メトロノーム}
-\end{figure}
-
+音楽のテンポを設定する関数
+\begin{lstlisting} 
+music.set_tempo(ticks=4, bpm=120)
+\end{lstlisting}
+音楽の再生する関数
+\begin{lstlisting} 
+music.play(music, pin=microbit.pin0, wait=True, loop=False)
+\end{lstlisting}
 \end{document}

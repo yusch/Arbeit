@@ -31,45 +31,36 @@
 }
 
 \begin{document}
-\title{課題3}
+\title{課題4}
 \author{ロボ団マスターコース}
 \maketitle
 
 \section{はじめに}
 実機を使って動かしてみよう！\\
-今回は、外付けの圧電ブザーを接続して鳴らしてみよう！\\
-画像の通りに接続をして、デジタルピンのポート０に１を出力することで音が鳴るよ！\\
+今回は、ランダムについて勉強しよう！\\
+まずは、下のコードを写経しよう。どんな動きをするか確認できたら、課題にとりくんでみよう！\\
 \section{ソースコード}
 \begin{lstlisting} 
 from microbit import *
-pin0.write_digital(1)
+import random
+names = ["Mary", "Yolanda", "Damien", "Alia", "Kushal", "Mei Xiu", "Zoltan" ]
+display.scroll(random.choice(names))
 \end{lstlisting}
 
+\subsection{問題1}
+1から10の数字がランダムで表示されるプログラムを作ろう！
+\subsection{問題2}
+2個のデジタルサイコロを作ろう！
+\subsection{問題3}
+LEDライトをつなげてランダムに点滅するプログラムを作ろう！
+\subsection{問題4}
+三個のLEDライトをつなげてランダムに選んだLEDを光らせるプログラムを作ろう！
+\subsection{問題5}
+モールス信号一覧→からランダムに文字を選んでLEDでモールス信号を光らせよう！
 \begin{figure}[H]
   \centering
   \includegraphics[width=4cm]{1.png}
-  \caption{microbit配線図}
-\end{figure}
-
-\subsection{問題1}
-圧電ブザーを3秒間鳴らして5秒間スリープをループするプログラムを作ってみよう！
-
-\subsection{問題2}
-1分タイマーを作って1秒ごとにブザーが鳴るプログラムを作ってみよう！
-
-\subsection{問題3}
-1分タイマーを作って2秒ごとにブザーがなるプログラムを作ってみよう！
-
-\subsection{問題4}
-分数を(1から60分)に変更できるタイマーを作って1秒ごとにブザーが鳴るプログラムを作ってみよう！
-
-\subsection{問題5}
-40から200BPMに変更できるメトロノームを作ってみよう！
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=2cm]{2.png}
-  \caption{メトロノーム}
+  \caption{モールス信号早見表}
 \end{figure}
 
 \end{document}

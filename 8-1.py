@@ -1,4 +1,3 @@
-idaf# -*- coding: utf-8 -*-
 # 整数の入力
 a = int(input())
 # スペース区切りの整数の入力

@@ -1,0 +1,141 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{here}
+\usepackage{ascmac}\usepackage{listings, jlisting, color}
+\definecolor{OliveGreen}{rgb}{0.0,0.6,0.0}
+\definecolor{Orenge}{rgb}{0.89,0.55,0}
+\definecolor{SkyBlue}{rgb}{0.28, 0.28, 0.95}
+\lstset{
+  language={C++}, % 言語の指定
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex,
+  keywordstyle={\color{SkyBlue}},     %キーワード(int, ifなど)の書体指定
+  commentstyle={\color{OliveGreen}},  %注釈の書体
+  stringstyle=\color{Orenge}          %文字列
+}
+
+\begin{document}
+\title{課題11}
+\author{ロボ団マスターコース}
+\maketitle
+
+\section{はじめに}
+次回授業参観に向けた問題を解いていくよ！\\
+アルゴリズムの能力とPythonのプログラミング力が養われるから頑張ろう！\\
+Pythonを動かすことができるサイト:\url{https://www.tutorialspoint.com/execute_python_online.php}
+\section{問題}
+\subsection{}
+すぬけ君は 1,2,3の番号がついた3つのマスからなるマス目を持っています．
+すぬけ君は 1 が書かれたマスにビー玉を置きます.ビー玉が置かれるマスがいくつあるか求めよう！\\
+$\underline{入力}$\\
+101\\
+$\underline{出力}$\\
+2\\
+\\
+1番目のマスと，3番目のマス2つにビー玉が置かれているので2になるね！
+\begin{table}[htb]
+  \begin{tabular}{ll}
+    s=list() & sという名前の配列をつくる\\
+    s=list(input()) & 配列sに入力した数字を代入\\
+    s.count("0") & sに0が何個あるか数える関数だよ
+  \end{tabular}
+\end{table}
+\subsection{}
+すぬけ君は，黒板に書かれている整数がすべて偶数であるとき，書かれている整数すべてを2で割ったものに置き換える事ができます．すぬけ君は最大で何回操作を行うことができるかを求めよう！\\
+$\underline{入力}$\\
+3\\
+8 12 40\\
+$\underline{出力}$\\
+2\\
+\begin{table}[htb]
+  \begin{tabular}{ll}
+    1回目 & 4 6 20\\
+    2回目 & 2 3 10\\
+    3回目 & 奇数の3があるから割れないね！
+  \end{tabular}
+\end{table}
+\subsection{}
+上底の長さがa，下底の長さがb，高さがhの台形があります．この台形の面積を求めてみよう！\\
+入力する数字はすべて整数で，高さhは偶数です！\\
+$\underline{入力}$\\
+a\\
+b\\
+h\\
+$\underline{出力}$\\
+台形の面積\\
+\\
+$\underline{入力}$\\
+3\\
+4\\
+2\\
+$\underline{出力}$\\
+7\\
+\subsection{}
+古くからある日本の文化として海外でも有名な俳句というものがあります．
+俳句は5,7,5で表現されることから五七五とも呼ばれます．
+そんな俳句が大好きなもつお君がいました．
+しかし，もつお君はまだ俳句を初めてまもないのでよく文字数を間違えてしまいます．
+3つの文節の並びの文字数がそれぞれ 5,7,5となるようにこの順番で並んでいるときには俳句といえます．
+5,5,7でも並び変えれば俳句になるので俳句です．
+これらを判定するプログラムを作ってみましょう！\\
+俳句の場合は”HAIKU!”と表示し，俳句ではない場合は”MOTSUO!”と表示しよう！\\
+\begin{table}[H]
+  \begin{tabular}{ll}
+    575の場合 & "HAIKU!"\\
+    557の場合 & ”HAIKU!”\\
+    577の場合 & ”MOTSUO!”\\
+    となるよ！
+  \end{tabular}
+\end{table}
+前回ならったinput()関数や
+\begin{lstlisting} 
+s=input()
+print("{}".format(s))
+\end{lstlisting}
+if文をつかって解いて見よう！！
+\begin{lstlisting} 
+if n==1:
+	print("1です")
+else:
+	print("1ではないです")
+\end{lstlisting}
+\subsection{}
+ロボ団春日井校の生徒さんへ宿題を出すことにしました．
+N人の生徒さんを１列に並んでもらい，１人目には１つ宿題を出し，２人目には2つ宿題を出します．\\
+この要領でN人目にはN個の宿題を出すことにします．
+すぬけ君の順番を入力していくつ宿題を出すか表示するプログラムを作ろう！\\
+\subsection{}
+すぬけ君はコロナが明けたら旅行をして旅館に泊まろうと計画をしています．\\
+この旅館の宿泊費は最初のK泊までは，1泊あたりX円K+1泊目以降は，1泊あたりY円すぬけ君は，このホテルにN泊連続で宿泊することにしました．
+すぬけ君の宿泊費は合計で何円になるか求めてみよう！\\
+$\underline{入力}$\\
+N\\
+K\\
+X\\
+Y\\
+$\underline{出力}$\\
+合計金額\\
+$\underline{入力}$\\
+5\\
+3\\
+10000\\
+9000\\
+$\underline{出力}$\\
+48000\\
+\end{document}
